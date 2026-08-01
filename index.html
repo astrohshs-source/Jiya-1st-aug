@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Girlfriend's Day — Jiya</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+  :root{
+    --lav-50:#f7f3fb;
+    --lav-100:#efe4f7;
+    --lav-200:#ddc7ee;
+    --lav-500:#9b6bc7;
+    --lav-600:#7d4bab;
+    --lav-700:#5f3585;
+    --gold:#c9a24b;
+    --ink:#3d2a52;
+    --paper:#fffdfb;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Quicksand',sans-serif;
+    background:
+      radial-gradient(circle at 8% 8%, rgba(233,205,247,.55), transparent 40%),
+      radial-gradient(circle at 95% 15%, rgba(201,162,75,.15), transparent 35%),
+      linear-gradient(160deg,#f4ecfa 0%, #ece0f6 45%, #f6ecf9 100%);
+    color:var(--ink);
+    padding:28px 14px 60px;
+    overflow-x:hidden;
+  }
+
+  .sparkle{position:fixed;pointer-events:none;inset:0;z-index:0;}
+
+  .page{
+    max-width:760px;
+    margin:0 auto;
+    position:relative;
+    z-index:1;
+  }
+
+  .eyebrow{
+    display:flex;justify-content:center;
+  }
+  .eyebrow span{
+    background:var(--paper);
+    border:1px solid var(--lav-200);
+    padding:7px 20px;
+    border-radius:999px;
+    font-size:.8rem;
+    letter-spacing:.04em;
+    color:var(--lav-700);
+    box-shadow:0 4px 14px rgba(122,70,170,.12);
+  }
+
+  h1.title{
+    text-align:center;
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:2.1rem;
+    margin:18px 0 0;
+    color:var(--lav-700);
+  }
+  .script{
+    text-align:center;
+    font-family:'Dancing Script',cursive;
+    font-size:4.2rem;
+    line-height:1;
+    margin:2px 0 10px;
+    background:linear-gradient(100deg,var(--lav-600),var(--lav-500) 55%, var(--gold));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .subtag{
+    text-align:center;
+    font-size:.85rem;
+    color:var(--lav-700);
+  }
+  .name-script{
+    text-align:center;
+    font-family:'Dancing Script',cursive;
+    font-weight:700;
+    font-size:3.1rem;
+    margin:8px 0 2px;
+    color:var(--lav-600);
+  }
+  .nicknames{
+    text-align:center;
+    font-size:.95rem;
+    color:var(--lav-700);
+    margin-bottom:6px;
+    letter-spacing:.02em;
+  }
+  .nicknames b{color:var(--gold);font-weight:700;}
+  .tagline{
+    text-align:center;
+    font-style:italic;
+    color:#6b5580;
+    margin-bottom:22px;
+    font-size:.95rem;
+  }
+
+  /* Counter — signature element */
+  .counter-wrap{
+    background:linear-gradient(135deg,var(--lav-700),var(--lav-600));
+    border-radius:22px;
+    padding:22px 18px;
+    text-align:center;
+    color:#fff;
+    box-shadow:0 14px 30px rgba(95,53,133,.28);
+    margin-bottom:26px;
+    position:relative;
+    overflow:hidden;
+  }
+  .counter-wrap::before{
+    content:"";
+    position:absolute;inset:0;
+    background:radial-gradient(circle at 85% -10%, rgba(255,255,255,.18), transparent 55%);
+  }
+  .counter-label{
+    font-size:.75rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    opacity:.85;
+    margin-bottom:10px;
+  }
+  .counter-grid{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .counter-cell{min-width:64px;}
+  .counter-num{
+    font-family:'Playfair Display',serif;
+    font-size:1.9rem;
+    font-weight:700;
+  }
+  .counter-unit{font-size:.68rem;opacity:.8;letter-spacing:.05em;}
+  .met-date{
+    margin-top:12px;
+    font-size:.8rem;
+    opacity:.9;
+  }
+
+  .card{
+    background:var(--paper);
+    border-radius:22px;
+    box-shadow:0 10px 26px rgba(122,70,170,.14);
+    border:1px solid #efe1f9;
+    padding:26px;
+    margin-bottom:22px;
+  }
+
+  .letter-head{
+    display:flex;align-items:center;gap:10px;
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:1.15rem;
+    color:var(--lav-700);
+    margin-bottom:14px;
+  }
+  .letter-body p{
+    margin:0 0 10px;
+    line-height:1.7;
+    font-size:.98rem;
+  }
+  .letter-body .end-heart{text-align:right;font-size:1.3rem;color:var(--lav-500);}
+
+  /* Player */
+  .player{
+    display:flex;align-items:center;gap:16px;
+  }
+  .play-btn{
+    flex:none;
+    width:56px;height:56px;border-radius:50%;
+    background:linear-gradient(135deg,var(--lav-600),var(--lav-500));
+    border:none;color:#fff;font-size:1.3rem;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    box-shadow:0 8px 18px rgba(122,70,170,.35);
+    transition:transform .15s;
+  }
+  .play-btn:active{transform:scale(.92);}
+  .player-info{flex:1;min-width:0;}
+  .player-title{font-weight:700;color:var(--lav-700);font-size:1.02rem;margin-bottom:2px;}
+  .player-sub{font-size:.85rem;color:#7c6790;margin-bottom:8px;}
+  .track{
+    position:relative;height:6px;background:var(--lav-100);
+    border-radius:99px;cursor:pointer;
+  }
+  .track-fill{
+    position:absolute;left:0;top:0;height:100%;
+    background:linear-gradient(90deg,var(--lav-500),var(--gold));
+    border-radius:99px;width:0%;
+  }
+  .track-times{display:flex;justify-content:space-between;font-size:.72rem;color:#9781aa;margin-top:5px;}
+  .tap-hint{
+    text-align:center;font-size:.75rem;color:var(--lav-700);
+    margin-top:10px;opacity:.85;
+  }
+
+  .reasons-title{
+    text-align:center;font-size:1.05rem;color:var(--lav-700);font-weight:700;
+    margin:8px 0 16px;
+  }
+  .reasons-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+    margin-bottom:24px;
+  }
+  @media(max-width:520px){.reasons-grid{grid-template-columns:repeat(2,1fr);}}
+  .reason{
+    background:var(--paper);border:1px solid #f0e2f9;border-radius:16px;
+    padding:14px 8px;text-align:center;
+    box-shadow:0 4px 12px rgba(122,70,170,.08);
+  }
+  .reason .emoji{font-size:1.4rem;margin-bottom:6px;}
+  .reason p{font-size:.78rem;line-height:1.35;margin:0;color:#4d3a63;}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:560px){.two-col{grid-template-columns:1fr;}}
+
+  .promises h3{
+    font-family:'Playfair Display',serif;
+    text-align:center;color:var(--lav-700);font-size:1.05rem;margin-top:0;
+  }
+  .promises ul{list-style:none;padding:0;margin:0;}
+  .promises li{
+    display:flex;gap:8px;margin-bottom:10px;font-size:.88rem;line-height:1.4;
+  }
+  .promises li::before{content:"♥";color:var(--gold);flex:none;}
+
+  .wish-note{
+    background:#fdf3f6;
+    border-radius:4px 16px 16px 16px;
+    padding:18px;
+    font-size:.88rem;
+    line-height:1.55;
+    position:relative;
+    box-shadow:0 6px 16px rgba(122,70,170,.1);
+  }
+  .wish-note::before{
+    content:"my biggest wish";
+    display:block;
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    color:var(--lav-700);
+    margin-bottom:8px;
+  }
+
+  .europe-strip{
+    margin-top:16px;
+    display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+  }
+  .europe-chip{
+    background:var(--lav-50);border:1px solid var(--lav-200);
+    border-radius:999px;padding:6px 14px;font-size:.75rem;color:var(--lav-700);
+  }
+
+  .footer{
+    text-align:center;margin-top:10px;
+  }
+  .footer .promise-line{
+    font-size:.95rem;color:var(--lav-700);font-weight:600;margin-bottom:4px;
+  }
+  .footer .yours{
+    font-family:'Dancing Script',cursive;font-size:1.1rem;color:#8a76a0;margin-top:14px;
+  }
+  .footer .sign{
+    font-family:'Dancing Script',cursive;font-size:2.6rem;color:var(--lav-600);
+  }
+  .footer .strip{
+    margin-top:18px;font-size:.72rem;color:var(--lav-700);
+    display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
+  }
+
+  .overlay-play{
+    position:fixed;inset:0;background:rgba(63,38,90,.55);
+    display:flex;align-items:center;justify-content:center;
+    z-index:50;cursor:pointer;
+  }
+  .overlay-inner{
+    background:#fff;border-radius:20px;padding:26px 30px;text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+  }
+  .overlay-inner div:first-child{font-size:2rem;margin-bottom:8px;}
+  .overlay-inner p{margin:0;color:var(--lav-700);font-weight:600;}
+</style>
+</head>
+<body>
+<canvas class="sparkle" id="sparkle"></canvas>
+
+<div class="page">
+
+  <div class="eyebrow"><span>💗 made with all my love</span></div>
+  <h1 class="title">Happy</h1>
+  <div class="script">Girlfriend's Day</div>
+  <div class="subtag">♡ for my everything ♡</div>
+  <div class="name-script">Jiya ♡</div>
+  <div class="nicknames">my <b>Baccha</b> · my <b>Betu</b> · my <b>Mera Sukoon</b></div>
+  <div class="tagline">My today. My tomorrow. My always.</div>
+
+  <div class="counter-wrap">
+    <div class="counter-label">us, since the day we met</div>
+    <div class="counter-grid" id="counterGrid">
+      <div class="counter-cell"><div class="counter-num" id="cDays">0</div><div class="counter-unit">days</div></div>
+      <div class="counter-cell"><div class="counter-num" id="cHours">0</div><div class="counter-unit">hours</div></div>
+      <div class="counter-cell"><div class="counter-num" id="cMins">0</div><div class="counter-unit">mins</div></div>
+      <div class="counter-cell"><div class="counter-num" id="cSecs">0</div><div class="counter-unit">secs</div></div>
+    </div>
+    <div class="met-date">we first met on 22 November 2025 — and I've been yours ever since</div>
+  </div>
+
+  <div class="card">
+    <div class="letter-head">✉️ A letter for you</div>
+    <div class="letter-body">
+      <p>I may not always be the best at expressing how much you mean to me, Jiya. But if my heart could write, it would write your name on every page.</p>
+      <p>You're my Baccha, my Betu, my Mera Sukoon — and that last one says it all. Whatever chaos the day brings, you're the quiet I come home to.</p>
+      <p>You are the calm in my chaos, the smile on my worst days, and the reason I believe in love so deeply. Thank you for being you.</p>
+      <p>I love you more than words can ever say.</p>
+      <div class="end-heart">♡</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="player">
+      <button class="play-btn" id="playBtn">▶</button>
+      <div class="player-info">
+        <div class="player-title">Our Song ♡</div>
+        <div class="player-sub">Ishq De Fanniyar</div>
+        <div class="track" id="track"><div class="track-fill" id="trackFill"></div></div>
+        <div class="track-times"><span id="curTime">0:00</span><span>Forever</span></div>
+      </div>
+    </div>
+    <div class="tap-hint">tap play — every note of this reminds me of you</div>
+    <audio id="audio" preload="auto">
+      <source src="Ishq_de_fanniyar.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div class="reasons-title">♡ reasons why you're my favorite person ♡</div>
+  <div class="reasons-grid">
+    <div class="reason"><div class="emoji">🌸</div><p>you understand me like no one else</p></div>
+    <div class="reason"><div class="emoji">🌷</div><p>you make every day feel special</p></div>
+    <div class="reason"><div class="emoji">🌼</div><p>your laugh is my favorite melody</p></div>
+    <div class="reason"><div class="emoji">🌻</div><p>you're my safe place and my peace</p></div>
+    <div class="reason"><div class="emoji">🌺</div><p>you believe in me even when I don't</p></div>
+    <div class="reason"><div class="emoji">💐</div><p>you make life so much more beautiful</p></div>
+  </div>
+
+  <div class="two-col">
+    <div class="card promises">
+      <h3>things i promise you ♡</h3>
+      <ul>
+        <li>I will always choose you, every single day.</li>
+        <li>I will build a life with you — a real home, together.</li>
+        <li>I will stand by you in every season, near or far.</li>
+        <li>I will respect you, support you, and grow with you.</li>
+        <li>I want to marry you, Jiya. I want forever with you.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="wish-note">
+        My biggest wish? To build our life together, in Germany, Europe — with you by my side, in a home that's truly ours. To make you my wife, hold your hand through every ordinary day, and finally call you mine, officially. You mean the whole world to me — this is why I'm working so hard to get us there.
+      </div>
+      <div class="europe-strip">
+        <div class="europe-chip">🇩🇪 Germany</div>
+        <div class="europe-chip">🏡 our home</div>
+        <div class="europe-chip">💍 marriage</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="promise-line">No matter what, no matter where, you will always be my happily ever after. 💗</div>
+    <div class="yours">yours, always and forever</div>
+    <div class="sign">Lakshya ♡</div>
+    <div class="strip"><span>Different Families ♡</span><span>One Love ♡</span><span>One Future</span></div>
+  </div>
+
+</div>
+
+<script>
+  // live "us since we met" counter
+  const metDate = new Date("2025-11-22T00:00:00");
+  function updateCounter(){
+    const now = new Date();
+    let diff = Math.max(0, now - metDate);
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins = Math.floor((diff % 3600000) / 60000);
+    const secs = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cDays').textContent = days;
+    document.getElementById('cHours').textContent = hours;
+    document.getElementById('cMins').textContent = mins;
+    document.getElementById('cSecs').textContent = secs;
+  }
+  updateCounter();
+  setInterval(updateCounter, 1000);
+
+  // audio player
+  const audio = document.getElementById('audio');
+  const playBtn = document.getElementById('playBtn');
+  const track = document.getElementById('track');
+  const trackFill = document.getElementById('trackFill');
+  const curTime = document.getElementById('curTime');
+
+  function fmt(t){
+    if(isNaN(t)) return "0:00";
+    const m = Math.floor(t/60);
+    const s = Math.floor(t%60).toString().padStart(2,'0');
+    return m+":"+s;
+  }
+
+  function setPlaying(isPlaying){
+    playBtn.textContent = isPlaying ? "❚❚" : "▶";
+  }
+
+  playBtn.addEventListener('click', () => {
+    if(audio.paused){ audio.play(); } else { audio.pause(); }
+  });
+  audio.addEventListener('play', () => setPlaying(true));
+  audio.addEventListener('pause', () => setPlaying(false));
+  audio.addEventListener('timeupdate', () => {
+    if(audio.duration){
+      trackFill.style.width = (audio.currentTime/audio.duration*100)+"%";
+    }
+    curTime.textContent = fmt(audio.currentTime);
+  });
+  track.addEventListener('click', (e) => {
+    const rect = track.getBoundingClientRect();
+    const pct = (e.clientX - rect.left) / rect.width;
+    if(audio.duration) audio.currentTime = pct * audio.duration;
+  });
+
+  // try autoplay on load; if blocked, show a tap-to-play overlay
+  window.addEventListener('load', () => {
+    const p = audio.play();
+    if(p !== undefined){
+      p.catch(() => {
+        const overlay = document.createElement('div');
+        overlay.className = 'overlay-play';
+        overlay.innerHTML = '<div class="overlay-inner"><div>🎵</div><p>tap anywhere to play our song</p></div>';
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click', () => {
+          audio.play();
+          overlay.remove();
+        }, { once:true });
+      });
+    }
+  });
+
+  // gentle sparkle background
+  const canvas = document.getElementById('sparkle');
+  const ctx = canvas.getContext('2d');
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+  const particles = Array.from({length: 34}, () => ({
+    x: Math.random()*canvas.width,
+    y: Math.random()*canvas.height,
+    r: Math.random()*1.6+0.4,
+    s: Math.random()*0.4+0.1,
+    o: Math.random()*0.5+0.2
+  }));
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle = "#c9a24b";
+    particles.forEach(p => {
+      p.y -= p.s;
+      if(p.y < -5) p.y = canvas.height+5;
+      ctx.globalAlpha = p.o;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(draw);
+  }
+  draw();
+</script>
+</body>
+</html>
